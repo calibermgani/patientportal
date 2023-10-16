@@ -1,0 +1,34 @@
+<div class="profile_first">
+  <ul class="nav line-tab px-3 nav-tabs  nav-tabs-custom nav-justified mx-0" role="tablist"
+    style="border: 1px solid #f5f5f9;">
+    <li class="nav-item" role="presentation">
+      <a class="nav-link active" data-bs-toggle="tab" href="#Profile" role="tab" aria-selected="true">
+
+        <span>Profile</span>
+      </a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" data-bs-toggle="tab" href="#Labresult" role="tab" aria-selected="false"
+        tabindex="-1">
+        <span>Lab Result</span>
+      </a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" data-bs-toggle="tab" href="#Medication" role="tab" aria-selected="false"
+        tabindex="-1">
+        <span>Medication</span>
+      </a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" data-bs-toggle="tab" href="#CareTeam" role="tab" aria-selected="false"
+        tabindex="-1">
+        <span>Care Team</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="row m-2 p-2"  style="border: 1px solid #bebebe;height: 900px;">
+  <div class="col-6 p-2"><app-builder></app-builder></div>
+  <div class="col-6 p-2" style="border-left: 1px solid #bebebe;"><app-result></app-result></div>
+</div>
+<router-outlet></router-outlet>
