@@ -184,6 +184,25 @@ ngOnInit(): void {
       console.error('Error deleting', error);
     }
   );
+
+  this.http.delete(`${this.apiUrl}/custom/${1}`).subscribe((response) => {
+    console.log('Deleted successfully', response);
+  },
+    (error) => {
+      console.error('Error deleting', error);
+    }
+  );
+
+  this.jsonService.getCustomValue$.subscribe((res:any)=>{
+    if(res){
+      this.http.get(`${this.apiUrl}/custom`).subscribe((response:any)=>{
+        console.log('Response for custom Form',response);
+
+        this.form = response[0];
+      })
+    }
+    this.jsonService.passData_custom(false);
+  });
 }
 onChange(event:any){
   this.formData = event;
@@ -191,14 +210,25 @@ onChange(event:any){
 
 ngAfterViewInit(): void {
   this.prism.init();
+
 }
-PassForm(){
+CreateNewForm(){
   console.log('FormData',this.formData);
 
   this.http.post(`${this.apiUrl}/components`,this.formData.form).subscribe((response:any)=>{
     console.log('Response',response);
-    this.jsonService.passData(true);
+    this.jsonService.passData_result(true);
 });
+}
+
+UpdateExistingForm(){
+  this.http.put(`${this.apiUrl}/custom/1`,this.formData.form).subscribe((res)=>{
+    console.log('updated successfully');
+    },
+    (error) => {
+      console.error('Error deleting', error);
+    });
+  this.jsonService.passData_EditCustom(true);
 }
 
 }

@@ -6,14 +6,27 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class JsonServiceService {
 
-  public jsonData = new BehaviorSubject<boolean>(false);
-  getJsonValue$ = this.jsonData.asObservable();
+  public resultcdtn = new BehaviorSubject<boolean>(false);
+  getResultValue$ = this.resultcdtn.asObservable();
+
+  public customctn = new BehaviorSubject<boolean>(false);
+  getCustomValue$ = this.customctn.asObservable();
+
+  public Editcustomctn = new BehaviorSubject<boolean>(false);
+  getCustomEditValue$ = this.Editcustomctn.asObservable();
 
   constructor() { }
 
-  passData(data:any){
-    console.log('asasas',data);
-
-    this.jsonData.next(data);
+  passData_result(data:any){
+    this.resultcdtn.next(data);
   }
+
+  passData_custom(data:any){
+    this.customctn.next(data);
+  }
+
+  passData_EditCustom(data:any){
+    this.Editcustomctn.next(data);
+  }
+
 }

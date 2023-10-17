@@ -22,12 +22,12 @@ export class ResultComponent {
   }
 
   ngAfterViewInit(): void {
-    this.jsonService.getJsonValue$.subscribe((res:any)=>{
+    this.jsonService.getResultValue$.subscribe((res:any)=>{
       if(res){
         this.http.get(`${this.apiUrl}/components`).subscribe((res:any)=>{
           this.form = res[0]
         });
-        this.jsonService.passData(false);
+        this.jsonService.passData_result(false);
       }
     })
   }

@@ -9,12 +9,14 @@ import { PrismService } from './services/prism.service';
 import { HttpClientModule} from '@angular/common/http';
 import { BuilderComponent } from './builder/builder.component';
 import { ResultComponent } from './result/result.component';
+import { CustomTemplateComponent } from './custom-template/custom-template.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BuilderComponent,
-    ResultComponent
+    ResultComponent,
+    CustomTemplateComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +26,7 @@ import { ResultComponent } from './result/result.component';
   ],
   providers: [
     PrismService,
-    {provide: FormioAppConfig, useValue: AppConfig},
+    // {provide: FormioAppConfig, useValue: AppConfig},
   ],
   bootstrap: [AppComponent]
 })

@@ -1,26 +1,4 @@
 {
-  "components": [
-    {
-      "components": [
-        {
-          "label": "Text Field",
-          "applyMaskOn": "change",
-          "tableView": true,
-          "key": "textField",
-          "type": "textfield",
-          "input": true
-        },
-        {
-          "label": "Submit",
-          "showValidations": false,
-          "tableView": false,
-          "key": "submit",
-          "type": "button",
-          "input": true
-        }
-      ],
-      "id": 1
-    }
-  ],
+  "components": [],
   "custom": []
 }
